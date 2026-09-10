@@ -1,0 +1,1 @@
+import type {ButtonHTMLAttributes} from "react"; export function Button({className="",...p}:ButtonHTMLAttributes<HTMLButtonElement>){return <button className={`inline-flex items-center justify-center ${className}`} {...p}/>}
