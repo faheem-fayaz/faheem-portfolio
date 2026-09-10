@@ -125,7 +125,10 @@ function TerminalWidget() {
       return;
     }
     if (nextCommand === "faheem --contact") {
-      window.location.href = `mailto:${EMAIL}?subject=Opportunity%20to%20work%20together&body=Hi%20Faheem%2C%0A%0AI%27d%20like%20to%20connect%20about...`;
+window.location.href =
+  "mailto:" +
+  EMAIL +
+  "?subject=Opportunity%20to%20work%20together&body=Hi%20Faheem%2C%0A%0AI%27d%20like%20to%20connect%20about...";
     }
     const matchedRoute = terminalSectionRoutes.find(({ keywords }) => keywords.some((keyword) => nextCommand.includes(keyword)));
     const output = terminalResponses[nextCommand] ?? (matchedRoute
