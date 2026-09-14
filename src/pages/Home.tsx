@@ -32,14 +32,14 @@ const experience = [
   {
     index: "01",
     company: "BalanX Bio",
-    role: "Software Development Intern",
-    period: "Nov 2025 — Jun 2026",
+    role: "Computer Science Intern",
+    period: "Dec 2025 — Jun 2026",
     summary:
-      "Backend systems for authentication, AI ingestion, health data, and connected-device workflows.",
+      "Contributed to backend systems, APIs, integrations, and internal application workflows as part of a software engineering team.",
     details: [
-      "Built APIs with TypeScript, Node.js, Express.js, and Prisma across core product workflows.",
-      "Implemented an AI gateway and emotion-ingestion flows with validation, timeout handling, and structured errors.",
-      "Developed verification workflows and health-summary APIs, plus a Next.js internal dashboard with Git/GitHub integration.",
+      "Built and maintained backend APIs for core product workflows using TypeScript, Node.js, Express.js, and Prisma.",
+      "Implemented validation, timeout handling, structured errors, and integration workflows to improve backend reliability.",
+      "Developed verification and health-summary workflows and contributed to an internal Next.js dashboard with Git/GitHub integration.",
     ],
     stack: ["TypeScript", "Node.js", "Express", "Prisma", "Next.js"],
   },
@@ -52,7 +52,7 @@ const experience = [
       "A secure library management system designed around clear roles, reliable data, and validated APIs.",
     details: [
       "Developed a Library Management System with C#, ASP.NET Core MVC, and SQL Server.",
-      "Implemented role-based admin and user modules with authentication and 12+ secured endpoints.",
+      "Implemented role-based admin and user modules with authentication and secured endpoints.",
       "Designed normalized relational structures, automated workflows, and validated API behavior with Postman.",
     ],
     stack: ["C#", "ASP.NET Core", "SQL Server", "Postman"],
@@ -60,11 +60,11 @@ const experience = [
 ];
 
 const skillGroups = [
-  { label: "LANGUAGES", items: ["Python", "TypeScript", "Java", "C#", "SQL"] },
-  { label: "BACKEND", items: ["FastAPI", "Node.js", "Express.js", "Spring Boot", "ASP.NET Core MVC"] },
-  { label: "DATA", items: ["PostgreSQL", "MySQL", "SQL Server", "Prisma", "Dapper"] },
-  { label: "SECURITY + AI", items: ["JWT", "RBAC", "2FA / OTP", "AI API Integration", "Async Processing"] },
-  { label: "TOOLS", items: ["Git", "GitHub", "Docker", "Postman", "VS Code"] },
+  { label: "LANGUAGES", items: ["Python", "C#", "SQL"] },
+  { label: "BACKEND", items: ["FastAPI", "ASP.NET Core", "REST APIs", "JWT Authentication"] },
+  { label: "DATABASES", items: ["MySQL", "SQL Server", "Dapper"] },
+  { label: "FRONTEND", items: ["HTML", "CSS", "React"] },
+  { label: "TOOLS", items: ["Git", "GitHub", "Docker", "Postman"] },
 ];
 
 type TerminalLine = { command: string; output: string[] };
@@ -79,13 +79,13 @@ const terminalResponses: Record<string, string[]> = {
     "Natural language also works: show my work, what do you use, contact me",
   ],
   "faheem --architecture": [
-    "focus = [REST APIs, auth systems, AI integrations]",
+    "focus = [REST APIs, authentication, database-driven systems]",
     "principles = [explicit contracts, secure defaults, observable failures]",
-    "stack = [Python, TypeScript, Java, C#]",
+    "stack = [Python, C#, SQL]",
   ],
   "curl /api/v1/resume": [
     '{ "name": "Faheem Fayaz",',
-    '  "role": "Backend Developer",',
+    '  "role": "Software Engineer - Backend-Focused",',
     '  "location": "Srinagar, India",',
     '  "status": "open to opportunities" }',
   ],
@@ -164,7 +164,7 @@ window.location.href =
           <span className="text-emerald-400" data-testid="terminal-intro-prompt">$</span>
           <span className="text-slate-300" data-testid="terminal-intro-command">whoami</span>
         </div>
-        <p className="pl-4 text-slate-500" data-testid="terminal-intro-response">faheem.fayaz — backend developer</p>
+        <p className="pl-4 text-slate-500" data-testid="terminal-intro-response">faheem.fayaz — software engineer / backend-focused</p>
         <div className="mt-2 flex gap-2" data-testid="terminal-status-line">
           <span className="text-emerald-400" data-testid="terminal-status-prompt">$</span>
           <span className="text-slate-300" data-testid="terminal-status-command">systemctl status portfolio</span>
@@ -282,15 +282,15 @@ export default function Home() {
             <div className="relative z-10" data-testid="hero-copy-column">
               <div className="mb-10 flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.22em] text-emerald-400" data-testid="hero-kicker"><span className="status-pulse" data-testid="hero-status-dot" /> Available for backend opportunities <span className="text-slate-600" data-testid="hero-kicker-separator">/</span> Srinagar, IN</div>
               <h1 className="max-w-4xl font-heading text-[clamp(3.3rem,8vw,7.5rem)] font-semibold leading-[0.86] tracking-[-0.07em] text-slate-100" data-testid="hero-heading">Backend<br /><span className="text-emerald-400" data-testid="hero-heading-accent">systems</span><br />with intent.</h1>
-              <p className="mt-9 max-w-xl font-body text-lg leading-relaxed text-slate-400 sm:text-xl" data-testid="hero-description">I’m Faheem Fayaz — a backend developer building dependable APIs, secure authentication flows, and AI-integrated products that hold up beyond the demo.</p>
+              <p className="mt-9 max-w-xl font-body text-lg leading-relaxed text-slate-400 sm:text-xl" data-testid="hero-description">I’m Faheem Fayaz — a software engineer focused on backend development, dependable APIs, secure authentication flows, and database-driven applications.</p>
               <div className="mt-10 flex flex-wrap items-center gap-4" data-testid="hero-actions">
                 <Button className="group h-12 rounded-none bg-emerald-400 px-5 font-mono text-[11px] uppercase tracking-[0.15em] text-[#07110d] hover:bg-emerald-300" data-testid="hero-contact-button" onClick={() => scrollToSection("contact")}><Mail size={15} /> Start a conversation <ArrowDownRight size={15} className="transition-transform duration-300 group-hover:translate-x-1 group-hover:translate-y-1" /></Button>
                 <a className="inline-flex h-12 items-center gap-2 border border-slate-700 px-5 font-mono text-[11px] uppercase tracking-[0.15em] text-slate-300 transition-colors duration-300 hover:border-slate-400 hover:text-white" data-testid="hero-resume-download-link" href={RESUME_URL} rel="noreferrer" target="_blank"><Download size={15} /> View resume</a>
               </div>
               <div className="mt-14 flex flex-wrap gap-x-8 gap-y-3 border-t border-white/[0.08] pt-5 font-mono text-[10px] uppercase tracking-[0.16em] text-slate-500" data-testid="hero-metadata-row">
                 <span data-testid="hero-metadata-years"><strong className="text-slate-200">2021–25</strong> B.Tech CSE</span>
-                <span data-testid="hero-metadata-focus"><strong className="text-slate-200">12+</strong> secured endpoints</span>
-                <span data-testid="hero-metadata-mode"><strong className="text-slate-200">async</strong> by default</span>
+                <span data-testid="hero-metadata-focus"><strong className="text-slate-200">02</strong> live projects</span>
+                <span data-testid="hero-metadata-mode"><strong className="text-slate-200">backend</strong> focused</span>
               </div>
             </div>
             <motion.div className="relative z-10 self-end lg:pb-3" data-testid="hero-terminal-column" initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.15 }}>
@@ -309,13 +309,13 @@ export default function Home() {
               <div className="border-l border-emerald-400/60 pl-5" data-testid="about-principle-contracts"><h2 className="font-heading text-xl font-semibold tracking-tight text-slate-100" data-testid="about-principle-contracts-title">Contracts before complexity.</h2><p className="mt-3 font-body leading-relaxed text-slate-400" data-testid="about-principle-contracts-copy">I design APIs that are easy to validate, reason about, and hand over — from request shape to structured errors.</p></div>
               <div className="border-l border-sky-400/60 pl-5" data-testid="about-principle-security"><h2 className="font-heading text-xl font-semibold tracking-tight text-slate-100" data-testid="about-principle-security-title">Security as a starting point.</h2><p className="mt-3 font-body leading-relaxed text-slate-400" data-testid="about-principle-security-copy">JWT, role-based access, 2FA, verification workflows — the permission model belongs in the architecture, not the final checklist.</p></div>
               <div className="border-l border-amber-400/60 pl-5" data-testid="about-principle-integration"><h2 className="font-heading text-xl font-semibold tracking-tight text-slate-100" data-testid="about-principle-integration-title">Integrations that behave.</h2><p className="mt-3 font-body leading-relaxed text-slate-400" data-testid="about-principle-integration-copy">AI services need the same discipline as any dependency: timeouts, validation, observable failures, and a useful fallback path.</p></div>
-              <div className="border-l border-slate-600 pl-5" data-testid="about-principle-learning"><h2 className="font-heading text-xl font-semibold tracking-tight text-slate-100" data-testid="about-principle-learning-title">Always close to the system.</h2><p className="mt-3 font-body leading-relaxed text-slate-400" data-testid="about-principle-learning-copy">Across Python, TypeScript, Java, and C#, I stay curious about the data, the runtime, and the humans who depend on both.</p></div>
+              <div className="border-l border-slate-600 pl-5" data-testid="about-principle-learning"><h2 className="font-heading text-xl font-semibold tracking-tight text-slate-100" data-testid="about-principle-learning-title">Always close to the system.</h2><p className="mt-3 font-body leading-relaxed text-slate-400" data-testid="about-principle-learning-copy">Across Python, C#, SQL, and web technologies, I stay curious about how systems work and how people depend on them.</p></div>
             </div>
           </div>
           <div className="mt-20 grid border-y border-white/[0.08] sm:grid-cols-3" data-testid="about-metrics-row">
-            <div className="border-b border-white/[0.08] py-7 sm:border-b-0 sm:border-r sm:pr-8" data-testid="about-metric-backend"><p className="font-mono text-4xl text-slate-100" data-testid="about-metric-backend-value">05</p><p className="mt-2 font-mono text-[10px] uppercase tracking-[0.17em] text-slate-500" data-testid="about-metric-backend-label">backend ecosystems</p></div>
-            <div className="border-b border-white/[0.08] py-7 sm:border-b-0 sm:px-8 sm:border-r" data-testid="about-metric-projects"><p className="font-mono text-4xl text-slate-100" data-testid="about-metric-projects-value">02</p><p className="mt-2 font-mono text-[10px] uppercase tracking-[0.17em] text-slate-500" data-testid="about-metric-projects-label">systems shipped</p></div>
-            <div className="py-7 sm:pl-8" data-testid="about-metric-focus"><p className="font-mono text-4xl text-emerald-400" data-testid="about-metric-focus-value">∞</p><p className="mt-2 font-mono text-[10px] uppercase tracking-[0.17em] text-slate-500" data-testid="about-metric-focus-label">questions worth asking</p></div>
+            <div className="border-b border-white/[0.08] py-7 sm:border-b-0 sm:border-r sm:pr-8" data-testid="about-metric-backend"><p className="font-mono text-4xl text-slate-100" data-testid="about-metric-backend-value">02</p><p className="mt-2 font-mono text-[10px] uppercase tracking-[0.17em] text-slate-500" data-testid="about-metric-backend-label">live projects</p></div>
+            <div className="border-b border-white/[0.08] py-7 sm:border-b-0 sm:px-8 sm:border-r" data-testid="about-metric-projects"><p className="font-mono text-4xl text-slate-100" data-testid="about-metric-projects-value">02</p><p className="mt-2 font-mono text-[10px] uppercase tracking-[0.17em] text-slate-500" data-testid="about-metric-projects-label">internships</p></div>
+            <div className="py-7 sm:pl-8" data-testid="about-metric-focus"><p className="font-mono text-4xl text-emerald-400" data-testid="about-metric-focus-value">03</p><p className="mt-2 font-mono text-[10px] uppercase tracking-[0.17em] text-slate-500" data-testid="about-metric-focus-label">core languages</p></div>
           </div>
         </section>
 
@@ -323,7 +323,7 @@ export default function Home() {
           <div className="mx-auto max-w-7xl px-5 py-24 sm:px-8 lg:px-10 lg:py-32" data-testid="experience-inner"><SectionLabel number="02" children="Impact log" /><div className="mt-14" data-testid="experience-list">{experience.map((item) => (<article className="group grid gap-8 border-b border-white/[0.08] py-10 first:pt-0 last:border-b-0 lg:grid-cols-[110px_0.75fr_1.25fr] lg:gap-10" data-testid={`experience-item-${item.index}`} key={item.index}><div className="font-mono text-xs text-emerald-400" data-testid={`experience-index-${item.index}`}>/ {item.index}</div><div data-testid={`experience-summary-${item.index}`}><h2 className="font-heading text-2xl font-semibold tracking-tight text-slate-100" data-testid={`experience-company-${item.index}`}>{item.company}</h2><p className="mt-2 font-mono text-[10px] uppercase tracking-[0.15em] text-slate-500" data-testid={`experience-role-${item.index}`}>{item.role}</p><p className="mt-5 font-mono text-[10px] uppercase tracking-[0.15em] text-emerald-400/80" data-testid={`experience-period-${item.index}`}>{item.period}</p></div><div data-testid={`experience-detail-${item.index}`}><p className="max-w-xl font-body text-lg leading-relaxed text-slate-300" data-testid={`experience-description-${item.index}`}>{item.summary}</p><ul className="mt-6 grid gap-3" data-testid={`experience-bullets-${item.index}`}>{item.details.map((detail, detailIndex) => (<li className="flex gap-3 font-body text-sm leading-relaxed text-slate-500" data-testid={`experience-bullet-${item.index}-${detailIndex}`} key={detail}><Check className="mt-1 shrink-0 text-emerald-400" size={14} /><span>{detail}</span></li>))}</ul><div className="mt-7 flex flex-wrap gap-2" data-testid={`experience-stack-${item.index}`}>{item.stack.map((technology) => (<Badge className="rounded-none border border-slate-700 bg-transparent font-mono text-[10px] font-normal uppercase tracking-[0.1em] text-slate-400" data-testid={`experience-tech-${item.index}-${technology.toLowerCase().replaceAll(" ", "-")}`} key={technology} variant="outline">{technology}</Badge>))}</div></div></article>))}</div></div>
         </section>
 
-        <section className="mx-auto max-w-7xl scroll-mt-24 px-5 py-24 sm:px-8 lg:px-10 lg:py-32" id="work" data-testid="work-section"><SectionLabel number="03" children="Selected systems" /><div className="mt-12 grid gap-5 lg:grid-cols-2" data-testid="project-grid">{projects.map((project) => (<motion.article className="project-card" data-testid={`project-card-${project.number}`} key={project.number} whileHover={{ y: -5 }} transition={{ duration: 0.25 }}><div className="flex items-start justify-between" data-testid={`project-header-${project.number}`}><span className={`project-number ${project.accent === "sky" ? "text-sky-400" : "text-emerald-400"}`} data-testid={`project-number-${project.number}`}>{project.number}</span><span className="font-mono text-[10px] uppercase tracking-[0.16em] text-slate-600" data-testid={`project-type-${project.number}`}>{project.type}</span></div><h2 className="mt-16 font-heading text-3xl font-semibold tracking-tight text-slate-100" data-testid={`project-name-${project.number}`}>{project.name}</h2><p className="mt-4 max-w-md font-body leading-relaxed text-slate-400" data-testid={`project-description-${project.number}`}>{project.description}</p><div className="mt-10 border-t border-white/[0.08] pt-5" data-testid={`project-architecture-${project.number}`}><p className="font-mono text-[10px] uppercase tracking-[0.16em] text-slate-600" data-testid={`project-architecture-label-${project.number}`}>architecture</p><p className="mt-2 font-mono text-sm text-slate-300" data-testid={`project-architecture-value-${project.number}`}>{project.architecture}</p></div><div className="mt-6 grid grid-cols-3 gap-px border border-white/[0.08] bg-white/[0.08]" data-testid={`project-metrics-${project.number}`}>{project.metrics.map((metric, metricIndex) => (<div className="bg-[#12151E] p-3" data-testid={`project-metric-${project.number}-${metricIndex}`} key={metric.label}><p className={`font-mono text-base ${project.accent === "sky" ? "text-sky-400" : "text-emerald-400"}`} data-testid={`project-metric-value-${project.number}-${metricIndex}`}>{metric.value}</p><p className="mt-1 font-mono text-[9px] uppercase tracking-[0.1em] text-slate-600" data-testid={`project-metric-label-${project.number}-${metricIndex}`}>{metric.label}</p></div>))}</div><div className="mt-7 flex flex-wrap items-center justify-between gap-4" data-testid={`project-footer-${project.number}`}><div className="flex flex-wrap gap-2" data-testid={`project-tags-${project.number}`}>{project.tags.map((tag) => (<span className="border border-slate-700 px-2 py-1 font-mono text-[10px] text-slate-500" data-testid={`project-tag-${project.number}-${tag.toLowerCase().replaceAll(" ", "-")}`} key={tag}>{tag}</span>))}</div><div className="flex flex-wrap items-center gap-4" data-testid={`project-links-${project.number}`}><Link className="inline-flex items-center gap-1 font-mono text-[10px] uppercase tracking-[0.14em] text-emerald-300 transition-colors hover:text-white" data-testid={`project-case-study-link-${project.number}`} to={`/work/${project.slug}`}>Case study <ChevronRight size={13} /></Link><a className="inline-flex items-center gap-1 font-mono text-[10px] uppercase tracking-[0.14em] text-slate-300 transition-colors hover:text-emerald-400" data-testid={`project-github-link-${project.number}`} href={project.repository} rel="noreferrer" target="_blank">Repository <ArrowUpRight size={13} /></a></div></div></motion.article>))}</div></section>
+        <section className="mx-auto max-w-7xl scroll-mt-24 px-5 py-24 sm:px-8 lg:px-10 lg:py-32" id="work" data-testid="work-section"><SectionLabel number="03" children="Selected systems" /><div className="mt-12 grid gap-5 lg:grid-cols-2" data-testid="project-grid">{projects.map((project) => (<motion.article className="project-card" data-testid={`project-card-${project.number}`} key={project.number} whileHover={{ y: -5 }} transition={{ duration: 0.25 }}><div className="flex items-start justify-between" data-testid={`project-header-${project.number}`}><span className={`project-number ${project.accent === "sky" ? "text-sky-400" : "text-emerald-400"}`} data-testid={`project-number-${project.number}`}>{project.number}</span><span className="font-mono text-[10px] uppercase tracking-[0.16em] text-slate-600" data-testid={`project-type-${project.number}`}>{project.type}</span></div><h2 className="mt-16 font-heading text-3xl font-semibold tracking-tight text-slate-100" data-testid={`project-name-${project.number}`}>{project.name}</h2><p className="mt-4 max-w-md font-body leading-relaxed text-slate-400" data-testid={`project-description-${project.number}`}>{project.description}</p><div className="mt-10 border-t border-white/[0.08] pt-5" data-testid={`project-architecture-${project.number}`}><p className="font-mono text-[10px] uppercase tracking-[0.16em] text-slate-600" data-testid={`project-architecture-label-${project.number}`}>architecture</p><p className="mt-2 font-mono text-sm text-slate-300" data-testid={`project-architecture-value-${project.number}`}>{project.architecture}</p></div><div className="mt-7 flex flex-wrap items-center justify-between gap-4" data-testid={`project-footer-${project.number}`}><div className="flex flex-wrap gap-2" data-testid={`project-tags-${project.number}`}>{project.tags.map((tag) => (<span className="border border-slate-700 px-2 py-1 font-mono text-[10px] text-slate-500" data-testid={`project-tag-${project.number}-${tag.toLowerCase().replaceAll(" ", "-")}`} key={tag}>{tag}</span>))}</div><div className="flex flex-wrap items-center gap-4" data-testid={`project-links-${project.number}`}><Link className="inline-flex items-center gap-1 font-mono text-[10px] uppercase tracking-[0.14em] text-emerald-300 transition-colors hover:text-white" data-testid={`project-case-study-link-${project.number}`} to={`/work/${project.slug}`}>Case study <ChevronRight size={13} /></Link>{project.liveDemo && <a className="inline-flex items-center gap-1 font-mono text-[10px] uppercase tracking-[0.14em] text-sky-300 hover:text-white" href={project.liveDemo} target="_blank" rel="noreferrer">Live demo <ExternalLink size={13} /></a>}<a className="inline-flex items-center gap-1 font-mono text-[10px] uppercase tracking-[0.14em] text-slate-300 transition-colors hover:text-emerald-400" data-testid={`project-github-link-${project.number}`} href={project.repository} rel="noreferrer" target="_blank">Repository <ArrowUpRight size={13} /></a></div></div></motion.article>))}</div></section>
 
         <section className="border-y border-white/[0.07] bg-[#0d1017] scroll-mt-24" id="skills" data-testid="skills-section"><div className="mx-auto max-w-7xl px-5 py-24 sm:px-8 lg:px-10 lg:py-28" data-testid="skills-inner"><div className="grid gap-14 lg:grid-cols-[0.7fr_1.3fr] lg:gap-24"><div data-testid="skills-intro"><SectionLabel number="04" children="Technical range" /><h2 className="mt-10 max-w-sm font-heading text-4xl font-semibold leading-[0.95] tracking-[-0.05em] text-slate-100" data-testid="skills-heading">The tools are different.<br /><span className="text-slate-500">The thinking stays.</span></h2><p className="mt-6 max-w-sm font-body leading-relaxed text-slate-400" data-testid="skills-description">A practical stack shaped by building real workflows, not collecting logos.</p></div><div className="grid gap-px border border-white/[0.08] bg-white/[0.08] sm:grid-cols-2" data-testid="skills-grid">{skillGroups.map((group, groupIndex) => (<div className="bg-[#0d1017] p-6" data-testid={`skill-group-${groupIndex}`} key={group.label}><p className="font-mono text-[10px] uppercase tracking-[0.17em] text-emerald-400" data-testid={`skill-group-label-${groupIndex}`}>{group.label}</p><div className="mt-5 flex flex-wrap gap-x-5 gap-y-3" data-testid={`skill-group-items-${groupIndex}`}>{group.items.map((skill) => (<span className="font-body text-sm text-slate-300" data-testid={`skill-item-${groupIndex}-${skill.toLowerCase().replaceAll(" ", "-").replaceAll("/", "-")}`} key={skill}>{skill}</span>))}</div></div>))}</div></div></div></section>
 

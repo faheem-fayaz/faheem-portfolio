@@ -23,7 +23,7 @@ export default function CaseStudy() {
             <h1 className="mt-8 max-w-5xl font-heading text-[clamp(3rem,8vw,7rem)] font-semibold leading-[0.88] tracking-[-0.07em]">{project.name}</h1>
             <p className="mt-9 max-w-2xl font-body text-xl leading-relaxed text-slate-400">{project.context}</p>
             <div className="mt-10 flex flex-wrap gap-3">
-              <a className="inline-flex h-12 items-center gap-2 bg-emerald-400 px-5 font-mono text-[11px] uppercase tracking-[0.15em] text-[#07110d] hover:bg-emerald-300" href={project.repository} target="_blank" rel="noreferrer">View repository <ArrowUpRight size={15}/></a>
+              <a className="inline-flex h-12 items-center gap-2 bg-emerald-400 px-5 font-mono text-[11px] uppercase tracking-[0.15em] text-[#07110d] hover:bg-emerald-300" href={project.repository} target="_blank" rel="noreferrer">View repository <ArrowUpRight size={15}/></a>{project.liveDemo && <a className="inline-flex h-12 items-center gap-2 border border-sky-500/40 px-5 font-mono text-[11px] uppercase tracking-[0.15em] text-sky-300 hover:border-sky-400 hover:text-white" href={project.liveDemo} target="_blank" rel="noreferrer">Live demo <ArrowUpRight size={15}/></a>}
               <Link className="inline-flex h-12 items-center gap-2 border border-slate-700 px-5 font-mono text-[11px] uppercase tracking-[0.15em] text-slate-300 hover:border-slate-400 hover:text-white" to="/#contact">Discuss a similar system <ExternalLink size={14}/></Link>
             </div>
           </div>
